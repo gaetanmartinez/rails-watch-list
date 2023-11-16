@@ -1,0 +1,16 @@
+<h1>Lists#show</h1>
+<p>Find me in app/views/lists/show.html.erb</p>
+
+<p><%= @list.name %></p>
+<p><%= link_to 'back to lists', lists_path, class: 'btn btn-outline-warning mt-3' %></p>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit, class: 'btn btn-outline-warning mt-3' %>
+<% end %>
+
+
+<% @bookmarks.each do |bookmark| %>
+<p><%= bookmark.comment %></p>
+<% end %>

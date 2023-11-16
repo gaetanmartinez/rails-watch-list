@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts 'Destoy all movies'
+Movie.destroy_all
+puts 'done'
+
+puts 'create'
+10.times do
+  Movie.create(title: Faker::JapaneseMedia::StudioGhibli.character, overview: Faker::JapaneseMedia::StudioGhibli.quote, poster_url: 'https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg', rating: 6.9)
+end
+puts 'end of create'
