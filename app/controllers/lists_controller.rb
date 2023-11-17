@@ -31,6 +31,6 @@ class ListsController < ApplicationController
   private
 
   def strong_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image)
   end
 end

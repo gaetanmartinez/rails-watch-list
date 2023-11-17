@@ -14,3 +14,6 @@
 <% @bookmarks.each do |bookmark| %>
 <p><%= bookmark.comment %></p>
 <% end %>
+
+
+  <%= cl_image_tag @list.image.key, height: 300, width: 400, crop: :fill %>
