@@ -5,7 +5,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(strong_params)
     @bookmark.list = @list
     if @bookmark.save!
-      redirect_to lists_path, notice: 'Your bookmark has been created'
+      redirect_to root_path, notice: 'Your bookmark has been created'
     else
       render :new, notice: 'echec'
     end
@@ -14,7 +14,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to lists_path, notice:'Your list has been deleted'
+    redirect_to root_path, notice:'Your list has been deleted'
   end
 
   private
